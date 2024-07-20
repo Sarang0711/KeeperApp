@@ -6,15 +6,19 @@ import CreateArea from "./CreateArea";
 import axios from 'axios';
 
 
+
 function App() {
 
   const [noteList, addToList] = useState([]); 
 
-  const URL = 'http://localhost:5000/';
+  // const URL = 'http://localhost:5000/';
+  // backend url deployed on render
+  const URL = "https://keeperapp-laqw.onrender.com:5000/";
 
   useEffect(() => {
     getList();
-  }, []);
+  });
+
 
   function getList() {
     axios.get(URL + 'notes')
